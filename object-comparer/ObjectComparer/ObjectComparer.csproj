@@ -41,8 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayComparer.cs" />
+    <Compile Include="CompareHandler.cs" />
     <Compile Include="Comparer.cs" />
+    <Compile Include="ComparerFactory.cs" />
+    <Compile Include="ICustomComparer.cs" />
+    <Compile Include="ListComparer.cs" />
+    <Compile Include="PrimitiveTypeComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceTypeComparer.cs" />
     <Compile Include="StudentModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

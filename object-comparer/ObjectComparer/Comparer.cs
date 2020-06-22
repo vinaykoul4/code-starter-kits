@@ -6,6 +6,14 @@ namespace ObjectComparer
 {
     public static class Comparer
     {
+        static ICustomComparer Compare;
+        static ComparerFactory compfactory;
+        static Comparer()
+        {
+            compfactory = new ComparerFactory();
+            
+        }
+
         public static bool AreSimilar<T>(T first, T second)
         {
 
@@ -28,7 +36,8 @@ namespace ObjectComparer
             //Compare directly values for primitive and string types
             if ((first.GetType().IsPrimitive && second.GetType().IsPrimitive) || (typeof(string).Equals(first.GetType()) && typeof(string).Equals(second.GetType())))
             {
-                return first.Equals(second);
+                Compare = compfactory.CompareObject(second.GetType().Name);
+                return Compare.compare<T>(first,second);
             }
 
             //compare arrays
