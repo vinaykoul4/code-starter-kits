@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Reflection;
+using System.Collections;
+
 namespace ObjectComparer
 {
    class ComparerFactory
     {
         
-        public  ICustomComparer CompareObject(string type)
+        public  ICustomComparer CompareObject(object type)
         {
             ICustomComparer customobj=null;
             switch (type)
@@ -22,6 +25,9 @@ namespace ObjectComparer
                     break;
                 case "IList":
                     customobj = new ListComparer();
+                    break;
+                case "Class":
+                    customobj = new ReferenceTypeComparer();
                     break;
             }
             return customobj;

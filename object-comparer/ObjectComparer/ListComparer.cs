@@ -8,25 +8,24 @@ namespace ObjectComparer
 {
     class ListComparer : ICustomComparer
     {
-        public bool compare<T>(T firstValue, T secondValue)
+        public bool compare<T>(T first, T second)
         {
-            dynamic cur = firstValue;
-            dynamic oth = secondValue;
-
+            dynamic firstobj = first;
+            dynamic secondobj = second;
             //Return false on different counts or 0
-            if (cur.Count == 0 || oth.Count == 0 || cur.Count != oth.Count)
+            if (firstobj.Count == 0 || secondobj.Count == 0 || firstobj.Count != secondobj.Count)
             {
                 return false;
             }
-            if (cur != null)
+            if (first != null)
             {
                 var result = false;
                 //Iterate one List
-                foreach (object cVal in cur)
+                foreach (object cVal in firstobj)
                 {
                     result = false;
                     //Iterate second List
-                    foreach (object oVal in oth)
+                    foreach (object oVal in secondobj)
                     {
                         //Recursively call the AreSimilar method
                         var areEqual = Comparer.AreSimilar(cVal, oVal);
@@ -40,7 +39,7 @@ namespace ObjectComparer
                 if (result == false)
                     return false;
             }
-            return false;
+            return true;
         }
     }
 }

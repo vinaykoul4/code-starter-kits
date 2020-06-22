@@ -13,7 +13,6 @@ namespace ObjectComparer
             Array firstarray = first as Array;
             Array secondarray = second as Array;
 
-
             //Return false on different lengths
             if (firstarray == null || secondarray == null || firstarray.Length != secondarray.Length)
             {
@@ -33,7 +32,7 @@ namespace ObjectComparer
                     return false;
                 i++;
             }
-            return false;
+            return true;
         }
     }
 }

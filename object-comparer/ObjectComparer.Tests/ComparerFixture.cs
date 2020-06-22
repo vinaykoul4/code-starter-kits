@@ -76,14 +76,7 @@ namespace ObjectComparer.Tests
             StudentModel SecondStudent = FirstStudent;
             Assert.IsTrue(Comparer.AreSimilar(FirstStudent, SecondStudent));
         }
-        [TestMethod]
-        public void Complexobject_same_property_values_are_similar_test()
-        {
-            StudentModel FirstStudent = new StudentModel() { Name = "John", Id = 100, Marks = new int[] { 10, 20, 30 }, TagId = new List<int>() { 1, 2, 6, 5, 6 } };
-
-            StudentModel SecondStudent = new StudentModel() { Name = "John", Id = 100, Marks = new int[] { 10, 30, 20 }, TagId = new List<int>() { 1, 2, 3, 5, 6 } };
-            Assert.IsTrue(Comparer.AreSimilar(FirstStudent, SecondStudent));
-        }
+        
         [TestMethod]
         public void complexobject_string_property_with_different_values_are_not_similar_test()
         {

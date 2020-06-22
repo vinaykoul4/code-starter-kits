@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayComparer.cs" />
-    <Compile Include="CompareHandler.cs" />
     <Compile Include="Comparer.cs" />
     <Compile Include="ComparerFactory.cs" />
     <Compile Include="ICustomComparer.cs" />
